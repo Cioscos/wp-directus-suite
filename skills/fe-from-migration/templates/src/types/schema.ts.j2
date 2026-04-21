@@ -1,0 +1,25 @@
+/* Auto-generated from Directus schema introspection. Do not edit. */
+
+{% macro ts_type(field) -%}
+{%- if field.type == 'string' or field.type == 'text' or field.type == 'uuid' -%}string
+{%- elif field.type == 'integer' or field.type == 'bigInteger' or field.type == 'float' or field.type == 'decimal' -%}number
+{%- elif field.type == 'boolean' -%}boolean
+{%- elif field.type == 'json' -%}unknown
+{%- elif field.type == 'dateTime' or field.type == 'date' or field.type == 'timestamp' -%}string
+{%- else -%}unknown
+{%- endif -%}
+{%- endmacro %}
+
+{% for collection in collections %}
+export interface {{ collection.name | replace('_', ' ') | title | replace(' ', '') }} {
+{%- for field in collection.fields %}
+  {{ field.name }}: {{ ts_type(field) }};
+{%- endfor %}
+}
+{% endfor %}
+
+export interface Schema {
+{%- for collection in collections %}
+  {{ collection.name }}: {{ collection.name | replace('_', ' ') | title | replace(' ', '') }}[];
+{%- endfor %}
+}

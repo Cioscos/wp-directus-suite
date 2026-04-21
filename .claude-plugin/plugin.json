@@ -1,0 +1,39 @@
+{
+  "name": "wp-directus-suite",
+  "version": "1.0.0",
+  "description": "Complete WordPress→Directus migration suite: migrate content with wp-to-directus, then generate a React+Vite+TypeScript frontend with fe-from-migration.",
+  "author": {
+    "name": "Claudio Ciccarone",
+    "email": "claudio.ciccarone@dxc.com",
+    "url": "https://github.com/Cioscos"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Cioscos/wp-directus-suite"
+  },
+  "keywords": [
+    "claude-code",
+    "skill",
+    "wordpress",
+    "directus",
+    "react",
+    "vite",
+    "headless-cms",
+    "migration",
+    "frontend-generator"
+  ],
+  "skills": [
+    {
+      "name": "wp-to-directus",
+      "path": "skills/wp-to-directus/SKILL.md"
+    },
+    {
+      "name": "fe-from-migration",
+      "path": "skills/fe-from-migration/SKILL.md"
+    }
+  ],
+  "dependencies": {
+    "claude-code": ">=1.0.0"
+  }
+}

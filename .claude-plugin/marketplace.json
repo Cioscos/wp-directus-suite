@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "wp-directus-suite",
+  "description": "Complete WordPress→Directus migration suite: migrate content then generate a React+Vite+TypeScript frontend.",
+  "owner": {
+    "name": "Cioscos",
+    "url": "https://github.com/Cioscos"
+  },
+  "plugins": [
+    {
+      "name": "wp-directus-suite",
+      "description": "Complete WordPress→Directus migration suite: migrate content with wp-to-directus, then generate a React+Vite+TypeScript frontend with fe-from-migration.",
+      "source": "./",
+      "category": "development"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+import { renderToString } from "react-dom/server";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { escapeInject, dangerouslySkipEscape } from "vike/server";
+import type { PageContextServer } from "vike/types";
+import { queryClient } from "~/lib/query-client";
+import { Layout } from "./Layout";
+{% if has_i18n %}import "~/lib/i18n";{% endif %}
+
+export async function onRenderHtml(pageContext: PageContextServer) {
+  const { Page, pageProps } = pageContext as typeof pageContext & { Page: React.FC<Record<string, unknown>>; pageProps: Record<string, unknown> };
+  const pageHtml = renderToString(
+    <QueryClientProvider client={queryClient}>
+      <Layout>
+        <Page {...pageProps} />
+      </Layout>
+    </QueryClientProvider>,
+  );
+  return escapeInject`<!DOCTYPE html>
+<html lang="{{ default_locale }}">
+<head><meta charset="UTF-8" /><title>{{ project_name }}</title></head>
+<body><div id="page-view">${dangerouslySkipEscape(pageHtml)}</div></body>
+</html>`;
+}

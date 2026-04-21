@@ -1,0 +1,21 @@
+import { useQuery } from "@tanstack/react-query";
+import { readItems, readItem } from "@directus/sdk";
+import { directus } from "~/lib/directus";
+import type { Schema } from "~/types/schema";
+
+export function useCollection<K extends keyof Schema>(
+  collection: K,
+  query: Record<string, unknown> = {},
+) {
+  return useQuery({
+    queryKey: [collection, query],
+    queryFn: () => directus.request(readItems(collection, query)),
+  });
+}
+
+export function useItem<K extends keyof Schema>(collection: K, id: string | number) {
+  return useQuery({
+    queryKey: [collection, id],
+    queryFn: () => directus.request(readItem(collection, id)),
+  });
+}

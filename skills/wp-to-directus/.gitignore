@@ -1,0 +1,4 @@
+# Runtime artefacts produced by the skill at execution time — not part of the skill source.
+state/
+scripts/lib/__pycache__/
+scripts/__pycache__/
