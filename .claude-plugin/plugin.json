@@ -26,11 +26,11 @@
   "skills": [
     {
       "name": "wp-to-directus",
-      "path": "skills/wp-to-directus/SKILL.md"
+      "path": "repos/wp-to-directus/skills/wp-to-directus/SKILL.md"
     },
     {
       "name": "fe-from-migration",
-      "path": "skills/fe-from-migration/SKILL.md"
+      "path": "repos/fe-from-migration/skills/fe-from-migration/SKILL.md"
     }
   ],
   "dependencies": {

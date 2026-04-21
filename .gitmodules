@@ -1,0 +1,6 @@
+[submodule "repos/wp-to-directus"]
+	path = repos/wp-to-directus
+	url = https://github.com/Cioscos/wp-to-directus.git
+[submodule "repos/fe-from-migration"]
+	path = repos/fe-from-migration
+	url = https://github.com/Cioscos/fe-from-migration.git
